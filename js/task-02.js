@@ -30,3 +30,6 @@ for( const ingredient of ingredients) {
 }
 
 console.log(list);
+
+
+
