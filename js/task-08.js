@@ -28,10 +28,11 @@ function onFormSubmit(event){
    const {email, password} = event.currentTarget.elements;
   
  if(email.value === '' || password.value === '' ){
-   alert('Все поля должны быть заполнены')
+   alert('Please fill in all the fields!')
  } else {
- console.log("email", email.value)
- console.log("password", password.value)
+
+const userData = { 'email': email.value , 'password': password.value}
+ console.log(userData);
  document.querySelector('.login-form').reset();
  }
 };
