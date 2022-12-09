@@ -33,11 +33,13 @@ input.addEventListener('blur', onInput);
 
 function onInput(event) {
   const { value } = event.currentTarget;
-  if (value.length !== length) {
-      input.classList.add('invalid');
+  if (value.length === length) {
+    input.classList.remove('invalid');
+    input.classList.add('valid');
+
    }else {
-      input.classList.replace('invalid', 'valid');
+      input.classList.remove('valid');
+      input.classList.add('invalid');
   }
 };
-
 
