@@ -28,24 +28,40 @@ function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;};
 
 const boxContainer = document.querySelector('#boxes');
-const amount = Number(document.querySelector('number'));
+const amount = document.querySelector('number'));
 const btnCreate = document.querySelector('[data-create]');
 const btnDestroy = document.querySelector('[data-destroy]');
 
 
+
+// створюю змінну newBox(це буде новий div), яка буде створюватися по натисканню.
+
+const div = document.createElement('div') 
+div.style.width = '30px';
+div.style.height = '30px';
+div.style.backgroundColor = getRandomHexColor();
+
+
+// вішаю слухач на кнопку, яка буде додавати div до html.
+
 btnCreate.addEventListener('click', onClick => {
-  const newBox = document.createElement('div');
-  console.log(newBox)
-  
-  newBox.style.width = '30px';
-  newBox.style.height = '30px';
-  newBox.style.color = getRandomHexColor();
-  boxContainer.appendChild(newBox);
+  boxContainer.appendChild(div);
 });
 
+// вішаю слухач на кнопку, яка буде видаляти div з html.
+
+
 btnDestroy.addEventListener('click', onClick => {
-  boxContainer.remove(newBox);
+  boxContainer.remove(div);
 });
+// Це наброски... може пізніше дороблю...
+
+
+        //  ПИТАННЯ!
+// Не розумію, як створити функцію, яка по одному кліку буде створювати багато div обїектів?
+
+// І як в інпут додати значення value, щоб туди записувалось amount
+
 
 
 
